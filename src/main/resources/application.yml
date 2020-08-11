@@ -7,7 +7,7 @@ spring:
     continue-on-error: true
     driver-class-name: org.postgresql.Driver
     initialization-mode: always
-    jdbc-url: jdbc:postgresql://plt_db:5432/plt
+    jdbc-url: jdbc:postgresql://country_db:5432/country
     password: postgres
     platform: postgresql
     tomcat:

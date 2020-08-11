@@ -89,6 +89,19 @@
             <artifactId>springfox-spring-webmvc</artifactId>
             <version>${swagger.springfox.version}</version>
         </dependency>
+        <!-- Убираем ругань в логе из-за значений по-умолчанию для int (нужно исключить аннотации из springfox-swagger2 через exclusions) -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <!--/swagger2-->
+
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-apt</artifactId>
