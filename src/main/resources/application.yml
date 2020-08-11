@@ -1,0 +1,51 @@
+server:
+  servlet:
+    context-path: /country-api
+
+spring:
+  datasource:
+    continue-on-error: true
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    jdbc-url: jdbc:postgresql://plt_db:5432/plt
+    password: postgres
+    platform: postgresql
+    tomcat:
+      initial-size: 0
+      max-active: 10
+      min-evictable-idle-time-millis: 5000
+      min-idle: 0
+      remove-abandoned: true
+      remove-abandoned-timeout: 60
+      time-between-eviction-runs-millis: 5000
+    username: postgres
+  fallback-to-system-locale: false
+  jackson:
+    mapper:
+      default-view-inclusion: true
+    time-zone: UTC
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: test
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+          time_zone: UTC
+        show_sql: true
+        temp:
+          use_jdbc_metadata_defaults: false
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    contexts: default
+    database-change-log-lock-table: DATABASECHANGELOGLOCK
+    database-change-log-table: DATABASECHANGELOG
+    default-schema: test
+  messages:
+    basename: messages/system  #,messages/api,messages/validation - см. Resource Bundle в ресурсах
+  mvc:
+    locale: ru
